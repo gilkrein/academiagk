@@ -411,3 +411,48 @@ footer {
     opacity: 1;
     visibility: visible;
 }
+
+/* =========================================
+   RESPONSIVIDADE (CELULARES E TABLETS)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Faz o ícone do menu sanduíche aparecer */
+    .menu-icon {
+        display: block;
+    }
+
+    /* 2. Esconde o menu normal e prepara ele para virar um "dropdown" */
+    .nav-menu {
+        display: none; /* Esconde até clicar */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Fica logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-bg);
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* 3. Ajeita o espaçamento dos links dentro do menu mobile */
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    /* 4. Esta é a mágica! Quando seu JS adiciona a classe 'active', o menu aparece */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    /* 5. BÔNUS: Faz a seção "Sobre" empilhar a foto e o texto no celular (antes ficava espremido) */
+    .about-flex {
+        flex-direction: column;
+    }
+    
+    /* Ajusta o tamanho do texto principal no celular */
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}
+
