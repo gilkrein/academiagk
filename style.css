@@ -41,7 +41,7 @@ header {
     z-index: 1000;
 }
 
-header .container /*flex box */ {
+header .container {
     display: flex;                      
     justify-content: space-between;
     align-items: center;
@@ -58,12 +58,12 @@ header .container /*flex box */ {
     color: var(--primary-color);
 }
 
-.nav-menu /*flex box */ {
+.nav-menu {
     list-style: none;
     display: flex;
 }
 
-.nav-menu li /*flex box */ {
+.nav-menu li {
     margin-left: 30px;
 }
 
@@ -84,7 +84,7 @@ header .container /*flex box */ {
     cursor: pointer;
 }
 
-.btn /*botão */ {
+.btn {
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
@@ -113,7 +113,7 @@ header .container /*flex box */ {
     background-color: #444;
 }
 
-.hero /*flex box */ {
+.hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static.vecteezy.com/ti/fotos-gratis/t2/68087426-forte-atletico-mulher-elevacao-barra-dentro-academia-mostrando-costas-musculos-ginastica-exercite-se-motivacao-esportes-foto.jpg') no-repeat center center/cover;
     height: 90vh;
     display: flex;
@@ -150,7 +150,7 @@ header .container /*flex box */ {
     gap: 30px;
 }
 
-.card /*flex box */ {
+.card {
     background-color: #FFF;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -191,7 +191,7 @@ header .container /*flex box */ {
     cursor: pointer;
 }
 
-.cta /*call to action */ {
+.cta {
     background-color: var(--dark-bg);
     color: var(--text-color);
     padding: 60px 0;
@@ -213,7 +213,7 @@ header .container /*flex box */ {
     background-color: #FFF;
 }
 
-.about-flex /*flex box */ {
+.about-flex {
     display: flex;
     align-items: center;
     gap: 50px;
@@ -247,5 +247,167 @@ footer {
     padding: 60px 0 20px 0;
 }
 
-.footer-content /*flex box */ {
-    display:
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h4 {
+    color: var(--text-color);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #A0A0A0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.autor {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#modal-overlay.hidden {
+    display: none;
+}
+
+#modal {
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    color: var(--dark-text);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #666;
+}
+
+.carousel {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: none;
+    border-radius: 5px;
+}
+
+.carousel-images img.active {
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 3px;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+#back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: #FFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+}
+
+#back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
